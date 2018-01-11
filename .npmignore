@@ -1,0 +1,11 @@
+# Dependency directory
+node_modules/
+
+# IDEA directory
+.idea/
+
+# Documentation
+docs/
+
+# Sources
+src/

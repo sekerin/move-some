@@ -1,0 +1,22 @@
+{
+  "name": "move-some",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel src -d lib",
+    "doc": "jsdoc -r -d docs ./src/",
+    "eslint": "eslint --ignore-path .gitignore ./"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jsdoc": "^3.5.5",
+    "jsdom": "^11.5.1",
+    "node-fetch": "^1.7.3"
+  },
+  "devDependencies": {
+    "babel-preset-node8": "^1.2.0",
+    "eslint": "^4.12.1"
+  }
+}
