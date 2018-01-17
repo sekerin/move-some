@@ -5,6 +5,7 @@ import HtmlDataProvider from './DataProviders/HtmlDataProvider';
 import Model from './Models/Model';
 import ModelCollection from './Models/ModelCollection';
 import HtmlModel from './Models/HtmlModel';
+import HtmlModelCollection from './Models/HtmlModelCollection';
 import HtmlPaginationModelCollection from './Models/HtmlPaginationModelCollection';
 
 const movingSites = {
@@ -15,6 +16,7 @@ const movingSites = {
   Model,
   ModelCollection,
   HtmlModel,
+  HtmlModelCollection,
   HtmlPaginationModelCollection
 };
 

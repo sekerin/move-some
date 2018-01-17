@@ -1,17 +1,9 @@
-import ModelCollection from './ModelCollection';
+import HtmlModelCollection from './HtmlModelCollection';
 
 /**
  * Collection models for Html and pagination
  */
-class HtmlPaginationModelCollection extends ModelCollection {
-
-  /**
-   * Initialization collection
-   * @return {HtmlPaginationModelCollection}
-   */
-  async init() {
-    return this;
-  }
+class HtmlPaginationModelCollection extends HtmlModelCollection {
 
   /**
    * Make collection
@@ -21,22 +13,6 @@ class HtmlPaginationModelCollection extends ModelCollection {
     await this.makeFromDataProvider(await this.getDataProvider());
     if (this.config.rules.collection.hasOwnProperty('pagination')) {
       await this.makeRecursivePagination(await this.getDataProvider());
-    }
-    return this;
-  }
-
-  /**
-   * get data provider and make
-   * @override
-   * @param dataProvider DataProvider
-   * @return {Promise.<HtmlPaginationModelCollection>}
-   */
-  async makeFromDataProvider(dataProvider) {
-    for (let element of await dataProvider.getCollectionByQuery(this.config.rules.element.query)) {
-      let elementConfig = this.config.rules.element.config;
-      elementConfig.dataProvider.config.data = element.innerHTML;
-      let elementModel = await new this.config.rules.element.class(elementConfig).init();
-      await this.addItem(await elementModel.make());
     }
     return this;
   }

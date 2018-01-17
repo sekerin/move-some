@@ -26,7 +26,7 @@ class ModelCollection {
    * @return {ModelCollection}
    */
   async make() {
-    return this;
+    return await this.makeFromDataProvider(await this.getDataProvider());
   }
 
   /**
